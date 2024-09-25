@@ -1,0 +1,14 @@
+# build it: singularity build $SINGULARITY_SIFDIR/pytorch_2.4.1-cuda12.4-cudnn9_brainscore.sif pytorch_2.4.1-cuda12.4-cudnn9_brainscore.def
+# run interactive: singularity shell --nv $SINGULARITY_SIFDIR/pytorch_2.4.1-cuda12.4-cudnn9_brainscore.sif
+
+Bootstrap: docker
+From: pytorch/pytorch:2.4.1-cuda12.4-cudnn9-runtime
+
+%environment
+    export PYTHONNOUSERSITE=1
+
+%post
+    echo "Installing necessary Python packages..."
+    conda install -c conda-forge mamba submitit -y
+    # You can add more conda install commands for other packages if needed
+    # echo "Additional software can be installed here if needed"

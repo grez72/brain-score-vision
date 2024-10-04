@@ -16,6 +16,8 @@ from brainio.assemblies import DataAssembly, AssemblyLoader, StimulusMergeAssemb
 from brainio.fetch import fetch_file, unzip, resolve_stimulus_set_class
 from brainio.stimuli import StimulusSetLoader, StimulusSet
 
+from pdb import set_trace
+
 _logger = logging.getLogger(__name__)
 
 

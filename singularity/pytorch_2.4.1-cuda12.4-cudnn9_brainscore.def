@@ -9,6 +9,6 @@ From: pytorch/pytorch:2.4.1-cuda12.4-cudnn9-runtime
 
 %post
     echo "Installing necessary Python packages..."
+    export PATH=/opt/conda/bin:$PATH  # Add Conda to PATH if needed
     conda install -c conda-forge mamba submitit -y
-    # You can add more conda install commands for other packages if needed
-    # echo "Additional software can be installed here if needed"
+    conda clean -ya
